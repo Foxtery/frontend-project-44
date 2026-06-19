@@ -13,4 +13,9 @@ make brain-games
 ```bash
 make public
 ```
+Запуск eslint
+
+```bash
+make lint
+```
 
