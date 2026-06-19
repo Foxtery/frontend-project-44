@@ -1,0 +1,23 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "My first project",
+  "homepage": "https://github.com/Foxtery/frontend-project-44#readme",
+  "bugs": {
+    "url": "https://github.com/Foxtery/frontend-project-44/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foxtery/frontend-project-44.git"
+  },
+  "license": "ISC",
+  "author": "Foxtery",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+} 
+}
