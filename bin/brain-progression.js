@@ -11,7 +11,7 @@ for (let i = 1; i <= 3; i += 1) {
   const randomIndex = getRandomFigure(progressionArray.length - 1)
   const correctAnswer = progressionArray[randomIndex]
   const hidedProgression = hideSymbol(progressionArray, randomIndex)
-  let getQuestion = `Question: `
+  let getQuestion = `Question:`
   for (const value of hidedProgression) {
     getQuestion += ` ${value}`
   }
