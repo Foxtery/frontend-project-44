@@ -19,7 +19,7 @@ while (i < 3) {
   }
   else {
     console.log(`${answer} is wrong answer ;( Correct answer was ${correctAnswer}.`)
-    console.log(`Let's try again, ${userName}`)
+    console.log(`Let's try again, ${userName}!`)
     isWin = false
     i = 4
   }
