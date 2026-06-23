@@ -6,14 +6,15 @@ import { getRandomFigure, getRandomOperation } from '../src/index.js'
 
 const userName = setUserName()
 console.log('What is the result of the expression?')
+let isWin = true
 for (let i = 1; i <= 3; i += 1) {
   const firstNumber = getRandomFigure()
   const secondNumber = getRandomFigure()
   const operation = getRandomOperation()
   const question = `Question: ${firstNumber} ${operation} ${secondNumber}`
   console.log(question)
-  let correctAnswer = 0
-  if (operation === '+'){
+  let correctAnswer
+  if (operation === '+') {
     correctAnswer = firstNumber + secondNumber
   }
   else if (operation === '-') {
@@ -29,7 +30,8 @@ for (let i = 1; i <= 3; i += 1) {
   else {
     console.log(`${usersAnswer} is wrong answer ;( Correct answer was ${correctAnswer}.`)
     console.log(`Let's try again, ${userName}`)
-    process.exit(0)
+    isWin = false
+    i = 4
   }
 }
-console.log(`Congratulations, ${userName}`)
+isWin && console.log (`Congratulations, ${userName}!`)
