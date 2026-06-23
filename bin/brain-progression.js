@@ -2,7 +2,7 @@
 
 import setUserName from '../src/cli.js'
 import { getRandomFigure, getUsersAnswer } from '../src/index.js'
-import { runProgression, hideSymbol } from '../src/games/prime.js'
+import { runProgression, hideSymbol } from '../src/games/progression.js'
 
 const userName = setUserName()
 console.log('What number is missing in the progression?')
