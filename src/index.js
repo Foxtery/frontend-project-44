@@ -4,12 +4,6 @@ const getRandomFigure = (range = 100) => {
   const randomFigure = Math.floor(Math.random() * range) + 1
   return randomFigure
 }
-const getRandomOperation = () => {
-  const operators = ['+', '-', '*']
-  const randomIndex = Math.floor(Math.random() * operators.length)
-  const randomOperation = operators[randomIndex]
-  return randomOperation
-}
 
 const getTheGreatestCommonDivisor = (a, b) => {
   while (b !== 0) {
@@ -66,4 +60,4 @@ const isNumberPrime = (number) => {
   return true
 }
 
-export { getRandomFigure, getRandomOperation, getTheGreatestCommonDivisor, getUsersAnswer, runProgression, hideSymbol, isNumberPrime }
+export { getRandomFigure, getTheGreatestCommonDivisor, getUsersAnswer, runProgression, hideSymbol, isNumberPrime }

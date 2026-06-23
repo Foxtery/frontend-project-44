@@ -2,7 +2,8 @@
 
 import readlineSync from 'readline-sync'
 import setUserName from '../src/cli.js'
-import { getRandomFigure, getRandomOperation } from '../src/index.js'
+import { getRandomFigure } from '../src/index.js'
+import { getRandomOperation } from '../src/games/calc.js'
 
 const userName = setUserName()
 console.log('What is the result of the expression?')

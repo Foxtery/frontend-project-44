@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import setUserName from '../src/cli.js'
-import { getRandomFigure, getUsersAnswer, isNumberPrime } from '../src/index.js'
+import { getRandomFigure, getUsersAnswer } from '../src/index.js'
+import { isNumberPrime } from '../src/games/prime.js'
 
 const userName = setUserName()
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".')

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import setUserName from '../src/cli.js'
-import { getRandomFigure, getTheGreatestCommonDivisor, getUsersAnswer } from '../src/index.js'
+import { getRandomFigure, getUsersAnswer } from '../src/index.js'
+import { getTheGreatestCommonDivisor } from '../src/games/gcd.js'
 
 const userName = setUserName()
 console.log('Find the greatest common divisor of given numbers.')
