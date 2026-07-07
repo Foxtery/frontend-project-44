@@ -1,5 +1,20 @@
 import { getRandomFigure } from '../index.js'
 
+const rules = 'What number is missing in the progression?'
+
+const getData = () => {
+  const progressionArray = runProgression()
+  const randomIndex = getRandomFigure(progressionArray.length - 1)
+  const correctAnswer = progressionArray[randomIndex]
+  const hidedProgression = hideSymbol(progressionArray, randomIndex)
+  let getQuestion = `Question:`
+  for (const value of hidedProgression) {
+    getQuestion += ` ${value}`
+  }
+  const question = getQuestion
+  return { question, correctAnswer }
+}
+
 const runProgression = () => {
   const progressionArray = []
   const startPosition = getRandomFigure()
@@ -19,4 +34,4 @@ const hideSymbol = (array, randomIndex) => {
   return array
 }
 
-export { runProgression, hideSymbol }
+export { rules, getData }

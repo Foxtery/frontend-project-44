@@ -1,3 +1,14 @@
+import { getRandomFigure } from '../index.js'
+
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+const getData = () => {
+  const number = getRandomFigure()
+  const question = `Question: ${number}`
+  const correctAnswer = isNumberPrime(number) ? 'yes' : 'no'
+  return { question, correctAnswer }
+}
+
 const isNumberPrime = (number) => {
   if (number < 2) {
     return false
@@ -20,4 +31,4 @@ const isNumberPrime = (number) => {
   return true
 }
 
-export { isNumberPrime }
+export { rules, getData }

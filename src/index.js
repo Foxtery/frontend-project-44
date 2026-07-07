@@ -1,17 +1,31 @@
 import readlineSync from 'readline-sync'
+import setUserName from '../src/cli.js'
+
+const brainGameMekchanizm = (rules, getData) => {
+  const userName = setUserName()
+  console.log(rules)
+  let isWin = true
+  for (let i = 1; i <= 3; i += 1) {
+    const data = getData()
+    const correctAnswer = data.correctAnswer
+    console.log(data.question)
+    const usersAnswer = readlineSync.question('Your answer: ')
+    if (String(correctAnswer) === usersAnswer) {
+      console.log('Correct!')
+    }
+    else {
+      console.log(`${usersAnswer} is wrong answer ;( Correct answer was ${correctAnswer}.`)
+      console.log(`Let's try again, ${userName}!`)
+      isWin = false
+      i = 4
+    }
+  }
+  isWin && console.log (`Congratulations, ${userName}!`)
+}
 
 const getRandomFigure = (range = 100) => {
   const randomFigure = Math.floor(Math.random() * range) + 1
   return randomFigure
-}
-
-const getTheGreatestCommonDivisor = (a, b) => {
-  while (b !== 0) {
-    const temp = b
-    b = a % b
-    a = temp
-  }
-  return a
 }
 
 const getUsersAnswer = () => {
@@ -19,45 +33,4 @@ const getUsersAnswer = () => {
   return usersAnswer
 }
 
-const runProgression = () => {
-  const progressionArray = []
-  const startPosition = getRandomFigure()
-  const indexProgression = getRandomFigure()
-  const progressionLength = getRandomFigure(5) + 5
-  let currentElement
-  progressionArray.push(startPosition)
-  for (let i = 1; i <= progressionLength; i += 1) {
-    currentElement = startPosition + indexProgression * i
-    progressionArray.push(currentElement)
-  }
-  return progressionArray
-}
-
-const hideSymbol = (array, randomIndex) => {
-  array[randomIndex] = '..'
-  return array
-}
-
-const isNumberPrime = (number) => {
-  if (number < 2) {
-    return false
-  }
-
-  if (number === 2) {
-    return true
-  }
-
-  if (number % 2 === 0) {
-    return false
-  }
-
-  for (let i = 3; i <= Math.sqrt(number); i += 2) {
-    if (number % i === 0) {
-      return false
-    }
-  }
-
-  return true
-}
-
-export { getRandomFigure, getTheGreatestCommonDivisor, getUsersAnswer, runProgression, hideSymbol, isNumberPrime }
+export { getRandomFigure, getUsersAnswer, brainGameMekchanizm }
