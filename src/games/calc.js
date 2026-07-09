@@ -1,4 +1,4 @@
-import { getRandomFigure } from '../index.js'
+import { getRandomFigure } from '../utils.js'
 
 const getRandomOperation = () => {
   const operators = ['+', '-', '*']
